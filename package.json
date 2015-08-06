@@ -1,0 +1,15 @@
+{
+  "name": "woff-parser",
+  "version": "1.0.0",
+  "description": "WOFF font parser",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test/test.js"
+  },
+  "author": "Andy Jansson",
+  "license": "MIT",
+  "dependencies": {
+    "es6-promise": "^2.3.0",
+    "iconv-lite": "^0.4.11"
+  }
+}
