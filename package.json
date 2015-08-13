@@ -4,12 +4,15 @@
   "description": "WOFF font parser",
   "main": "index.js",
   "scripts": {
-    "test": "node test/test.js"
+    "test": "mocha"
   },
   "author": "Andy Jansson",
   "license": "MIT",
   "dependencies": {
     "es6-promise": "^2.3.0",
     "iconv-lite": "^0.4.11"
+  },
+  "devDependencies": {
+    "mocha": "^2.2.5"
   }
 }
