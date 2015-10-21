@@ -1,4 +1,4 @@
-var Promise = global.Promise || require('es6-promise').Promise;
+var Promise = require('pinkie-promise');
 var decompress = require('./lib/decompress.js');
 var extend = require('util')._extend;
 var name = require('./lib/name');
