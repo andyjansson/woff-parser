@@ -3,9 +3,22 @@
   "version": "1.0.0",
   "description": "WOFF font parser",
   "main": "index.js",
+  "files": [
+    "index.js",
+    "lib"
+  ],
   "scripts": {
     "test": "mocha"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andyjansson/woff-parser.git"
+  },
+  "keywords": [
+    "woff",
+    "parser",
+    "font"
+  ],
   "author": "Andy Jansson",
   "license": "MIT",
   "dependencies": {
