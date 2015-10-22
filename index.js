@@ -26,15 +26,13 @@ module.exports = function (data) {
 		
 		switch (tag) {
 			case 0x6E616D65:
-				dataTables.push(decompress(buf,	origLength, function (contents, resolve) {
+				dataTables.push(decompress(buf, origLength).then(function (contents) {
 					woff['name'] = name(contents);
-					resolve();
 				}));
 				break;
 			case 0x4F532F32:
-				dataTables.push(decompress(buf, origLength,	function (contents, resolve) {
+				dataTables.push(decompress(buf, origLength).then(function (contents) {
 					woff['OS/2'] = os2(contents);
-					resolve();
 				}));
 				break;
 		}
