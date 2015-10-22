@@ -1,4 +1,3 @@
-var Promise = require('pinkie-promise');
 var decompress = require('./lib/decompress.js');
 var name = require('./lib/name');
 var os2 = require('./lib/os2');

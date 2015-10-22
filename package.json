@@ -22,8 +22,7 @@
   "author": "Andy Jansson",
   "license": "MIT",
   "dependencies": {
-    "iconv-lite": "^0.4.11",
-    "pinkie-promise": "^1.0.0"
+    "iconv-lite": "^0.4.11"
   },
   "devDependencies": {
     "mocha": "^2.2.5"
