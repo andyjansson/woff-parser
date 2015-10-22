@@ -1,6 +1,5 @@
 var Promise = require('pinkie-promise');
 var decompress = require('./lib/decompress.js');
-var extend = require('util')._extend;
 var name = require('./lib/name');
 var os2 = require('./lib/os2');
 
@@ -29,23 +28,21 @@ module.exports = function (data) {
 			switch (tag) {
 				case 0x6E616D65:
 					dataTables.push(decompress(buf,	origLength, function (contents, rslv) {
-						rslv({ name: name(contents) }); 
+						woff['name'] = name(contents);
+						rslv();
 					}));
 					break;
 				case 0x4F532F32:
 					dataTables.push(decompress(buf, origLength,	function (contents, rslv) {
-						rslv({ 'OS/2': os2(contents) }); 
+						woff['OS/2'] = os2(contents);
+						rslv();
 					}));
 					break;
 			}
 		}
 		
-		Promise.all(dataTables).then(function(results) {
-			var results = [woff].concat(results);
-			var result = results.reduce(function (a, b) { 
-				return extend(a, b); 
-			});
-			resolve(result);
+		Promise.all(dataTables).then(function() {
+			resolve(woff);
 		});
 	});
 };
