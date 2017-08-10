@@ -1,18 +1,48 @@
 {
   "name": "woff-parser",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "WOFF font parser",
-  "main": "index.js",
+
+  "main": "dist/index.js",
+  "files": [
+    "dist",
+    "LICENSE"
+  ],
   "scripts": {
-    "test": "mocha"
+    "prepublish": "npm run build && del-cli dist/__tests__",
+    "build": "del-cli dist && cross-env BABEL_ENV=publish babel src --out-dir dist",
+    "pretest": "eslint src && npm run build",
+    "test": "ava src/__tests__/"
   },
   "author": "Andy Jansson",
   "license": "MIT",
   "dependencies": {
-    "es6-promise": "^2.3.0",
     "iconv-lite": "^0.4.11"
   },
   "devDependencies": {
-    "mocha": "^2.2.5"
+    "ava": "^0.21.0",
+    "babel-cli": "^6.18.0",
+    "babel-core": "^6.21.0",
+    "babel-eslint": "^7.1.1",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-preset-env": "^1.4.0",
+    "babel-register": "^6.18.0",
+    "cross-env": "^5.0.5",
+    "del-cli": "^1.1.0",
+    "eslint": "^4.4.1",
+    "eslint-config-i-am-meticulous": "^6.0.1",
+    "eslint-plugin-babel": "^4.0.0",
+    "eslint-plugin-import": "^2.2.0"
+  },
+  "ava": {
+    "require": "babel-register"
+  },
+  "eslintConfig": {
+    "parser": "babel-eslint",
+    "extends": "eslint-config-i-am-meticulous",
+    "rules": {
+      "no-bitwise": "off",
+      "import/max-dependencies": "off"
+    }
   }
 }
