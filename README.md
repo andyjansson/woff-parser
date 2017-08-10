@@ -14,12 +14,12 @@ npm install woff-parser
 ## Usage 
 
 ```js
-var fs = require('fs');
-var parser = require('woff-parser');
+import fs from 'fs';
+import parser from 'woff-parser';
 
-fs.readFile('font.woff', function (err, contents) {
+fs.readFile('font.woff', (err, contents) => {
 	if (err) throw err;
-	parser(contents).then(function (result) {
+	parser(contents).then(result => {
 		console.log(result);
 	});
 });
@@ -47,3 +47,12 @@ Outputs:
 	...
 }
 ```
+
+## Note:
+
+`wff-parser` only implements the following [font tables](https://www.microsoft.com/typography/otspec/otff.htm#otttables):
+
+* name
+* OS/2
+
+Additional font tables will be implemented if requested. Pull requests are welcome.
