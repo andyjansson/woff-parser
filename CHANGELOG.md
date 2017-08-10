@@ -1,4 +1,4 @@
-# 2.0.0 - Unreleased
+# 2.0.0 - 2017-08-11
 * Rewrite in ES6.
 * Add Babel.
 * Replace Mocha with AVA.
