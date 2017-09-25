@@ -11,7 +11,7 @@ WOFF font parser
 npm install woff-parser
 ```
 
-## Usage 
+## Usage
 
 ```js
 import fs from 'fs';
@@ -54,5 +54,6 @@ Outputs:
 
 * `name`
 * `OS/2`
+* `cmap` (table formats 0, 4, and 6)
 
 Additional font tables will be implemented if requested. Pull requests are welcome.
