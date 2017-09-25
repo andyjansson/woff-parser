@@ -2,7 +2,6 @@
   "name": "woff-parser",
   "version": "2.0.0",
   "description": "WOFF font parser",
-
   "main": "dist/index.js",
   "files": [
     "dist",

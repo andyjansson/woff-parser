@@ -1,9 +1,11 @@
+import cmap from './cmap';
 import decompress from './decompress';
 import name from './name';
 import os2 from './os2'
 
 const TAG_NAME  = 0x6E616D65;
 const TAG_OS2   = 0x4F532F32;
+const TAG_CMAP  = 0x636D6170;
 
 export default function parseDataTables(data) {
     const numberOfTables = data.readUInt16BE(12);
@@ -34,9 +36,16 @@ export default function parseDataTables(data) {
                 );
                 break;
             }
+            case TAG_CMAP: {
+                promises.push(
+                    decompress(buf, origLength).then(contents => ({
+                        cmap: cmap(contents)
+                    }))
+                );
+            }
         }
     }
-    
+
     return Promise.all(promises).then(values => {
         return values.reduce((obj, curr) => Object.assign(obj, curr), {});
     });
