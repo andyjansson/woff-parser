@@ -43,7 +43,13 @@ Outputs:
 				"licenseUrl": "http://www.adobe.com/type/legal.html"
 			}
 		}
-	}
+	},
+    "cmap": {
+        "32": 3,
+        "33": 4,
+        "34": 5,
+        ...
+    }
 	...
 }
 ```
