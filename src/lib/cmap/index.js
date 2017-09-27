@@ -39,6 +39,8 @@ function decodeFormat0CmapTable(data, offset) {
             characterCodeToGlyphIndexMap[i] = glyphId;
         }
     }
+
+    return characterCodeToGlyphIndexMap;
 }
 
 function decodeFormat4CmapTable(data, offset) {
@@ -88,4 +90,6 @@ function decodeFormat6CmapTable(data, offset) {
             characterCodeToGlyphIndexMap[firstCode + i] = glyphId;
         }
     }
+
+    return characterCodeToGlyphIndexMap;
 }
