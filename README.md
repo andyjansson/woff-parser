@@ -11,7 +11,7 @@ WOFF font parser
 npm install woff-parser
 ```
 
-## Usage 
+## Usage
 
 ```js
 import fs from 'fs';
@@ -43,7 +43,13 @@ Outputs:
 				"licenseUrl": "http://www.adobe.com/type/legal.html"
 			}
 		}
-	}
+	},
+    "cmap": {
+        "32": 3,
+        "33": 4,
+        "34": 5,
+        ...
+    }
 	...
 }
 ```
@@ -54,5 +60,6 @@ Outputs:
 
 * `name`
 * `OS/2`
+* `cmap` (table formats 0, 4, and 6)
 
 Additional font tables will be implemented if requested. Pull requests are welcome.
